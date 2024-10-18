@@ -130,6 +130,11 @@ subdirs will be added to the load path."
 ;; a scratch buffer.
 (setopt initial-buffer-choice t) ;; this will inhibit the startup screen too.
 
+;; For macOS, use COMMAND key as META, and OPTION key as SUPER.
+(when (eq system-type 'darwin)
+  (setq mac-option-modifier 'super
+	mac-command-modifier 'meta))
+
 
 (provide 'init)
 ;;; init.el ends here

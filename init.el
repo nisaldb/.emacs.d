@@ -124,6 +124,12 @@ subdirs will be added to the load path."
 ;; Put custom file in the `etc' directory, maintained by no-littering.
 (setq custom-file (no-littering-expand-etc-file-name "custom.el"))
 
+;; I used to load a dashboard at the Emacs startup. However, I found no real
+;; benefit in doing this. I used it to shortcut into my projects, but other than
+;; that it was simply another package to configure. Now I would like to drop into
+;; a scratch buffer.
+(setopt initial-buffer-choice t) ;; this will inhibit the startup screen too.
+
 
 (provide 'init)
 ;;; init.el ends here

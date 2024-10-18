@@ -21,9 +21,7 @@
 ;;; Commentary:
 
 ;; `early-init.el' is usually used to customize the initialization of
-;; package system or the GUI.  But here I have set some variables that
-;; are related to native-compilation.  I'm not sure if they can be moved
-;; to the `init.el', so I'm going to keep them here.
+;; package system or the GUI.
 
 ;;; Code:
 
@@ -32,6 +30,14 @@
 
 ;; Suppress compiler warnings
 (setopt native-comp-async-report-warnings-errors 'silent)
+
+;; Resize the frame pixelwise, do not round the frame size to match
+;; character height.
+(setopt frame-resize-pixelwise t)
+
+;; Disable some UI clutter
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 (provide 'early-init)
 ;;; early-init.el ends here

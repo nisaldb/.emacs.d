@@ -135,6 +135,10 @@ subdirs will be added to the load path."
   (setq mac-option-modifier 'super
 	mac-command-modifier 'meta))
 
+;; Set my username and email
+(setopt user-full-name "Nisal Bandara")
+(setopt user-mail-address "devel@2path.org")
+
 
 (provide 'init)
 ;;; init.el ends here

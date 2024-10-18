@@ -137,7 +137,7 @@ subdirs will be added to the load path."
 
 ;; Set my username and email
 (setopt user-full-name "Nisal Bandara")
-(setopt user-mail-address "devel@2path.org")
+(setopt user-mail-address "thatndb@gmail.com")
 
 
 (provide 'init)

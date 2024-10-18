@@ -139,6 +139,8 @@ subdirs will be added to the load path."
 (setopt user-full-name "Nisal Bandara")
 (setopt user-mail-address "thatndb@gmail.com")
 
+;; More natural behavior when text is selected and typed over
+(delete-selection-mode 1)
 
 (provide 'init)
 ;;; init.el ends here

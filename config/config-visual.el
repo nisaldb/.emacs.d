@@ -43,6 +43,7 @@ PROPERTTY is one of the following keys and a value:
   :ensure t
   :demand t
   :commands fontaine-set-preset
+  :defines (fontaine-latest-state-file fontaine-presets)
   :hook (after-init . fontaine-mode)
   :config
   (setq fontaine-latest-state-file (no-littering-expand-var-file-name "fontaine"))
@@ -76,19 +77,19 @@ PROPERTTY is one of the following keys and a value:
 (defun ndb:-apply-theme-preset (preset)
   "Apply the theme and font specified by PRESET.
 This will disable all currently enabled themes and load the theme
-specified at the PRESET. Application of font is delegated to
+specified at the PRESET.  Application of font is delegated to
  `fontaine-set-preset'."
   (if (not preset)
-      (user-error "nil is not a valid PRESET value. This could be a bug.")
+      (user-error "nil is not a valid PRESET value.  This could be a bug")
     (let* ((preset-def  (cdr preset))
 	   (theme       (plist-get preset-def :theme))
 	   (font-preset (plist-get preset-def :fontaine)))
-      (mapcar #'disable-theme custom-enabled-themes)
+      (mapc #'disable-theme custom-enabled-themes)
       (load-theme theme :noconfirm)
-      (fontaine-set-preset font-preset)))
+      (fontaine-set-preset font-preset))))
 
 (defun ndb:-switch-to-theme-prompt ()
-  "Prompts the user for a theme preset to enable.
+  "Prompt the user for a theme preset to enable.
 Returns the name of the preset as a symbol."
   (intern
    (completing-read
@@ -97,8 +98,8 @@ Returns the name of the preset as a symbol."
     nil t)))
 
 (defun ndb:-find-theme-preset-by-name (name)
-  "Return the theme preset for `ndb:theme-presets' whose car is
-eq to NAME. It returns NIL if no such name found."
+  "Return the theme preset for `ndb:theme-presets' whose car is eq to NAME.
+It returns NIL if no such name found."
   (let ((sym (if (stringp name) (intern name) name)))
     (seq-find (lambda (preset) (eq sym (car preset)))
 	      ndb:theme-presets
@@ -109,7 +110,7 @@ eq to NAME. It returns NIL if no such name found."
 PRESET is a car of a list in the `ndb:theme-presets' list."
   (interactive (list (ndb:-switch-to-theme-prompt)))
   (if (and (not (daemonp)) (not window-system))
-      (user-error "Cannot switch themes in a terminal with this command. Please try `load-theme'.")
+      (user-error "Cannot switch themes in a terminal with this command.  Please try `load-theme'")
     (ndb:-apply-theme-preset (ndb:-find-theme-preset-by-name preset))))
 
 ;; Set the default theme preset

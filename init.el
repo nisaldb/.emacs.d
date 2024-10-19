@@ -142,5 +142,8 @@ subdirs will be added to the load path."
 ;; More natural behavior when text is selected and typed over
 (delete-selection-mode 1)
 
+;; Load config modules
+(require 'config-visual)
+
 (provide 'init)
 ;;; init.el ends here

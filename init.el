@@ -142,6 +142,14 @@ subdirs will be added to the load path."
 ;; More natural behavior when text is selected and typed over
 (delete-selection-mode 1)
 
+;; Emacs, started from a WM, doesn't usually inherit the PATH variable
+;; from shell.
+(use-package exec-path-from-shell
+  :ensure t
+  :if (memq window-system '(mac ns x))
+  :config
+  (exec-path-from-shell-initialize))
+
 ;; Load config modules
 (require 'config-visual)
 

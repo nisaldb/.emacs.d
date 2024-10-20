@@ -160,6 +160,7 @@ subdirs will be added to the load path."
 
 ;; Load config modules
 (require 'config-visual)
+(require 'config-navigation)
 
 (provide 'init)
 ;;; init.el ends here

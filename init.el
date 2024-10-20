@@ -24,6 +24,14 @@
 
 ;;; Code:
 
+;; This configuration depends on following features that are specific to
+;; Emacs 30. Without them some of the functionalities won't be available.
+;;  * which-key
+(when (version< emacs-version "30.0.0")
+  (error (format-message
+	  "[ndb] This configuration requires at least Emacs 30. But current version is %s"
+	  emacs-version)))
+
 (defvar ndb:root-dir user-emacs-directory
   "Root directory of this configuration tree.")
 

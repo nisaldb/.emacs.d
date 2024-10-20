@@ -116,8 +116,7 @@ PRESET is a car of a list in the `ndb:theme-presets' list."
 ;; Set the default theme preset
 (ndb:switch-to-theme 'light)
 
-;; KEY BIND: set the keybinding for switching theme presets
-(keymap-global-set "C-c C-t C-t" #'ndb:switch-to-theme)
+(keymap-global-set "C-c C-t" '("Switch theme" . ndb:switch-to-theme))
 					  
 (provide 'config-visual)
 ;;; config-visual.el ends here

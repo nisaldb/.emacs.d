@@ -37,5 +37,7 @@
 	  lisp-interaction-mode)
 	 . paredit-mode))
 
+(require 'config-c)
+
 (provide 'config-programming)
 ;;; config-programming.el ends here

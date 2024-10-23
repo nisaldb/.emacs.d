@@ -128,6 +128,7 @@ subdirs will be added to the load path."
 (setopt version-control t)
 (setopt kept-old-versions 10)
 (setopt kept-new-versions 10)
+(setopt delete-old-versions t)
 
 ;; Put custom file in the `etc' directory, maintained by no-littering.
 (setq custom-file (no-littering-expand-etc-file-name "custom.el"))

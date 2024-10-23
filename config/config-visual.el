@@ -29,7 +29,8 @@
 
 (defvar ndb:theme-presets
   '((dark :fontaine dark :theme zenburn)
-    (light :fontaine light :theme modus-operandi))
+    (light :fontaine light :theme modus-operandi)
+    (less :fontaine less :theme less))
   "Theme presets allows me to switch between themes and fonts.
 This is a list of lists of (PRESET-NAME PROPERTY...).
 
@@ -55,6 +56,10 @@ PROPERTTY is one of the following keys and a value:
 	   :default-family "Iosevka Slab"
 	   :default-height 130
 	   :variable-pitch-family "Iosevka Etoile")
+	  (less
+	   ;; defualt-family will be replaced by "Berkeley Mono"
+	   :default-family "SF Mono"
+	   :default-height 120)
 	  (t
 	   :inherit light))))
 
@@ -64,6 +69,13 @@ PROPERTTY is one of the following keys and a value:
 ;; versions of the theme. So it is better to use the built-in theme,
 ;; rather than worrying about backward-compatibility issues.
 (use-package zenburn-theme :ensure t)
+
+;; Less theme is very minimal black-on-white theme. It makes the code reading
+;; easy for some reason. I'm planning to use this theme with Berkeley Mono
+;; font for a better coding experience.
+(use-package less-theme
+  :vc (:url "https://github.com/nobiot/less-theme")
+  :ensure t)
 
 ;; Theme switching command
 ;; TODO:: move this to a separate module.

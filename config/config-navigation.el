@@ -97,32 +97,33 @@
 ;; a line in current buffer. There are many other advance searches in Consult.
 (use-package consult
   :ensure t
+  :demand t
   :hook (completion-list-mode . consult-preview-at-point-mode)
   :bind (;; Remap some standard Emacs keys to use consult commands
 	 ([remap switch-to-buffer] . consult-buffer)
 	 ([remap bookmark-jump]    . consult-bookmark)
 	 ([remap yank-pop]         . consult-yank-pop)
 	 ([remap project-switch-to-buffer] . consult-project-buffer)
-	 ;; M-g bindings for goto commands
-	 ("M-g e" . consult-compile-error)
-         ("M-g f" . consult-flymake)
-         ("M-g g" . consult-goto-line)
+	 ;; C-c g bindings for goto commands
+	 ("C-c g e" . consult-compile-error)
+         ("C-c g f" . consult-flymake)
+         ("C-c g g" . consult-goto-line)
          ("M-g M-g" . consult-goto-line)
-         ("M-g o" . consult-outline)
-         ("M-g m" . consult-mark)
-         ("M-g k" . consult-global-mark)
-         ("M-g i" . consult-imenu)
-         ("M-g I" . consult-imenu-multi)
-	 ;; M-s bindings for searching
-	 ("M-s f" . consult-find)           
-         ("M-s c" . consult-locate)
-         ("M-s g" . consult-grep)
-         ("M-s G" . consult-git-grep)
-         ("M-s r" . consult-ripgrep)
-         ("M-s l" . consult-line)
-         ("M-s L" . consult-line-multi)
-         ("M-s k" . consult-keep-lines)
-         ("M-s u" . consult-focus-lines))
+         ("C-c g o" . consult-outline)
+         ("C-c g m" . consult-mark)
+         ("C-c g k" . consult-global-mark)
+         ("C-c g i" . consult-imenu)
+         ("C-c g I" . consult-imenu-multi)
+	 ;; C-c s bindings for searching
+	 ("C-c s f" . consult-find)
+         ("C-c s c" . consult-locate)
+         ("C-c s g" . consult-grep)
+         ("C-c s G" . consult-git-grep)
+         ("C-c s r" . consult-ripgrep)
+         ("C-c s l" . consult-line)
+         ("C-c s L" . consult-line-multi)
+         ("C-c s k" . consult-keep-lines)
+         ("C-c s u" . consult-focus-lines))
   :custom
   (xref-show-xrefs-function #'consult-xref)
   (xref-show-definitions-function #'consult-xref)

@@ -30,7 +30,7 @@
 (defvar ndb:theme-presets
   '((dark :fontaine dark :theme zenburn)
     (light :fontaine light :theme modus-operandi)
-    (berkeley :fontaine berkeley :theme berkeley))
+    (berkeley :fontaine berkeley :theme brutalist))
   "Theme presets allows me to switch between themes and fonts.
 This is a list of lists of (PRESET-NAME PROPERTY...).
 

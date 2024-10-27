@@ -30,7 +30,7 @@
 (defvar ndb:theme-presets
   '((dark :fontaine dark :theme zenburn)
     (light :fontaine light :theme modus-operandi)
-    (less :fontaine less :theme less))
+    (berkeley :fontaine berkeley :theme berkeley))
   "Theme presets allows me to switch between themes and fonts.
 This is a list of lists of (PRESET-NAME PROPERTY...).
 
@@ -56,26 +56,25 @@ PROPERTTY is one of the following keys and a value:
 	   :default-family "Iosevka Slab"
 	   :default-height 130
 	   :variable-pitch-family "Iosevka Etoile")
-	  (less
-	   ;; defualt-family will be replaced by "Berkeley Mono"
-	   :default-family "SF Mono"
-	   :default-height 120)
+	  (berkeley
+	   :default-family "Berkeley Mono"
+	   :fixed-pitch-family "Berkeley Mono"
+	   :fixed-pitch-serif-family "Berkeley Mono"
+	   :default-height 130)
 	  (t
 	   :inherit light))))
 
-;; Themes that I'm going to use: Zenburn and Modus-Operandi
+;; Themes that I'm going to use: Zenburn and Modus-Operandi.
 ;; Modus Themes are built-in since Emacs 28, and I'm not going to
 ;; install them separately, as different Emacs versions have different
 ;; versions of the theme. So it is better to use the built-in theme,
 ;; rather than worrying about backward-compatibility issues.
 (use-package zenburn-theme :ensure t)
 
-;; Less theme is very minimal black-on-white theme. It makes the code reading
-;; easy for some reason. I'm planning to use this theme with Berkeley Mono
-;; font for a better coding experience.
-(use-package less-theme
-  :vc (:url "https://github.com/nobiot/less-theme")
-  :ensure t)
+;; Instead of Less theme, I'm now resorted to Brutalist theme.
+;; While it remains minimal as Less or EInk themes, there are
+;; minimal highlights for crucial elements, like strings...
+(use-package brutalist-theme :ensure t)
 
 ;; Theme switching command
 ;; TODO:: move this to a separate module.
@@ -97,7 +96,8 @@ specified at the PRESET.  Application of font is delegated to
 	   (theme       (plist-get preset-def :theme))
 	   (font-preset (plist-get preset-def :fontaine)))
       (mapc #'disable-theme custom-enabled-themes)
-      (load-theme theme :noconfirm)
+      (when theme
+	(load-theme theme :noconfirm))
       (fontaine-set-preset font-preset))))
 
 (defun ndb:-switch-to-theme-prompt ()
@@ -126,7 +126,7 @@ PRESET is a car of a list in the `ndb:theme-presets' list."
     (ndb:-apply-theme-preset (ndb:-find-theme-preset-by-name preset))))
 
 ;; Set the default theme preset
-(ndb:switch-to-theme 'light)
+(ndb:switch-to-theme 'berkeley)
 
 (keymap-global-set "C-c C-t" '("Switch theme" . ndb:switch-to-theme))
 					  

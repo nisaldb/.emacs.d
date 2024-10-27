@@ -74,5 +74,10 @@
 ;; C mode hooks
 (add-hook 'c-mode-hook #'ndb:postgresql-c-mode)
 
+;; I will not use any third-party packages for C programming.
+;; The rationale is that I must use what is available in Emacs,
+;; until I found a concrete reason to use a feature that is
+;; not available in Emacs.
+
 (provide 'config-c)
 ;;; config-c.el ends here

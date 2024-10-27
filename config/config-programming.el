@@ -27,6 +27,9 @@
 
 ;;; Code:
 
+(defvar ndb:personal-dev-dir-pattern "/Personal/"
+  "A pattern to identify directories which holds the personal coding projects.")
+
 ;; Paredit is a must have tool for structal editing and navigation for Lisp-like
 ;; programming languages. An alternative is parinfer, but I find it slightly diverged
 ;; from Emacs principles. (I might be wrong...)

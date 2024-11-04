@@ -20,9 +20,9 @@
 
 ;;; Commentary:
 
-;; This configures the support for programming languages I'm using. Each module
+;; This configures the support for programming languages I'm using.  Each module
 ;; under the `programming' directory contains the configurations related to a
-;; specific programming language. This file only configures the generic programming
+;; specific programming language.  This file only configures the generic programming
 ;; support.
 
 ;;; Code:

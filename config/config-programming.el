@@ -49,6 +49,15 @@
   :config
   (require 'smartparens-config))
 
+;; Flycheck is preferred to Flymake due to its comprehensive feature set
+(use-package flycheck
+  :ensure t
+  :custom
+  (flycheck-global-modes '(not lisp-interaction-mode))
+  (flycheck-emacs-lisp-load-path 'inherit)
+  :init
+  (global-flycheck-mode))
+
 (require 'config-c)
 
 (provide 'config-programming)

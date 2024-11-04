@@ -30,15 +30,24 @@
 (defvar ndb:personal-dev-dir-pattern "/Personal/"
   "A pattern to identify directories which holds the personal coding projects.")
 
-;; Paredit is a must have tool for structal editing and navigation for Lisp-like
-;; programming languages. An alternative is parinfer, but I find it slightly diverged
-;; from Emacs principles. (I might be wrong...)
-(use-package paredit
+;; Smartparens is a better alternative for Paredit. It supports languages other
+;; than lisps and has better keybindings.
+;; While configuring this I found a caveat in macOS, where it doesn't let me to
+;; use `C-M-d' as a keybinding. This is because that key sequence is already
+;; binded for dictionary lookup. To fix this following command need to be
+;; executed followed by a restart:
+;;
+;; defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys \
+;;   -dict-add 70 '<dict><key>enabled</key><false/></dict>'
+;;
+(use-package smartparens
   :ensure t
-  :hook ((emacs-lisp-mode
-	  lisp-mode
-	  lisp-interaction-mode)
-	 . paredit-mode))
+  :pin melpa-stable
+  :hook ((prog-mode text-mode) . smartparens-mode)
+  :custom
+  (sp-base-key-bindings 'sp)
+  :config
+  (require 'smartparens-config))
 
 (require 'config-c)
 

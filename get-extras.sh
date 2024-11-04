@@ -11,3 +11,9 @@ if [ ! -d "no-littering" ]; then
 	git clone https://github.com/emacscollective/no-littering.git no-littering
 	echo "Downloaded: no-littering"
 fi
+
+if [ ! -d "compat" ]; then
+	echo "Downloading compat..."
+	git clone https://github.com/emacs-compat/compat.git compat
+	echo "Downloaded: compat"
+fi

@@ -24,9 +24,8 @@
 
 ;;; Code:
 
-;; which-key is built-in to Emacs after version 30
 (use-package which-key
-  :ensure nil
+  :ensure t
   :hook (after-init . which-key-mode))
 
 ;; Vertico with Orderless and Marginalia provide a better minibuffer

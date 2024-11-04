@@ -23,10 +23,10 @@
 ;; These are my configurations for C and C++ programming language.
 ;; Actually, I don't write in C++, but by nature most of these
 ;; configurations will apply to C++ programming also.
-;; I only use C for my personal projects. So I would like to keep
-;; these configurations minimal or old-school. For example, I would
-;; never use LSP for C programming. I like to maintain tag databases
-;; for source code navigation. These preferences might seems a bit arcane
+;; I only use C for my personal projects.  So I would like to keep
+;; these configurations minimal or old-school.  For example, I would
+;; never use LSP for C programming.  I like to maintain tag databases
+;; for source code navigation.  These preferences might seems a bit arcane
 ;; but for some reason I can't shake them off.
 
 ;;; Code:
@@ -67,7 +67,7 @@
 ;; Modify Emacs in accordance with the PostgreSQL style for
 ;; relevant source files.
 (defun ndb:postgresql-c-mode ()
-  "Activate postgresql releated configuration whenever a C file from PostgreSQL source is opened."
+  "Activate postgresql releated configuration for PostgreSQL source."
   (when (string-match "/postgres\\(ql\\)?/" buffer-file-name)
     (c-set-style "postgresql")))
 

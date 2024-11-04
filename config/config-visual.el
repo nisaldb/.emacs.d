@@ -28,8 +28,7 @@
 ;;; Code:
 
 (defvar ndb:theme-presets
-  '((dark :fontaine dark :theme zenburn)
-    (light :fontaine light :theme modus-operandi)
+  '((light :fontaine light :theme modus-operandi)
     (berkeley :fontaine berkeley :theme brutalist))
   "Theme presets allows me to switch between themes and fonts.
 This is a list of lists of (PRESET-NAME PROPERTY...).
@@ -63,13 +62,6 @@ PROPERTTY is one of the following keys and a value:
 	   :default-height 130)
 	  (t
 	   :inherit light))))
-
-;; Themes that I'm going to use: Zenburn and Modus-Operandi.
-;; Modus Themes are built-in since Emacs 28, and I'm not going to
-;; install them separately, as different Emacs versions have different
-;; versions of the theme. So it is better to use the built-in theme,
-;; rather than worrying about backward-compatibility issues.
-(use-package zenburn-theme :ensure t)
 
 ;; Instead of Less theme, I'm now resorted to Brutalist theme.
 ;; While it remains minimal as Less or EInk themes, there are

@@ -31,6 +31,13 @@
 
 ;;; Code:
 
+;; Disable flycheck for C/C++
+(when (boundp 'flycheck-disabled-checkers)
+  (setq-default flycheck-disabled-checkers
+		(append flycheck-disabled-checkers '(c/c++-clang
+						     c/c++-gcc
+						     c/c++-cppcheck))))
+
 ;; Add a new style for PostgreSQL developments. This is an excerpt from
 ;; PostgreSQL's `src/tools/editor/emacs.sample' file.
 (c-add-style "postgresql"

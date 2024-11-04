@@ -107,7 +107,7 @@ subdirs will be added to the load path."
 (no-littering-theme-backups)
 
 ;; Use the same backup policy for TRAMP too.
-(setopt tramp-backup-directory-alist backup-directory-alist)
+;; (setopt tramp-backup-directory-alist backup-directory-alist)
 
 ;; Backup should be created by copying. Otherwise hard links will
 ;; refer to the wrong file.

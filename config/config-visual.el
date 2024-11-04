@@ -118,7 +118,8 @@ PRESET is a car of a list in the `ndb:theme-presets' list."
     (ndb:-apply-theme-preset (ndb:-find-theme-preset-by-name preset))))
 
 ;; Set the default theme preset
-(ndb:switch-to-theme 'berkeley)
+(with-eval-after-load 'fontaine
+  (ndb:switch-to-theme 'berkeley))
 
 (keymap-global-set "C-c C-t" '("Switch theme" . ndb:switch-to-theme))
 					  

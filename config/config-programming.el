@@ -59,6 +59,7 @@
   (global-flycheck-mode))
 
 (require 'config-c)
+(require 'config-clojure)
 
 (provide 'config-programming)
 ;;; config-programming.el ends here
